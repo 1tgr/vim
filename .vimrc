@@ -1,45 +1,99 @@
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" An example for a vimrc file.
+"
+" Maintainer:	Bram Moolenaar <Bram@vim.org>
+" Last change:	2002 Sep 19
+"
+" To use it, copy it to
+"     for Unix and OS/2:  ~/.vimrc
+"	      for Amiga:  s:.vimrc
+"  for MS-DOS and Win32:  $VIM\_vimrc
+"	    for OpenVMS:  sys$login:.vimrc
 
+" When started as "evim", evim.vim will already have done these settings.
+if v:progname =~? "evim"
+  finish
+endif
+
+call pathogen#infect()
+
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
 set nocompatible
-set background=dark
-set tabstop=4 shiftwidth=4 expandtab
-set autoindent
-set autochdir
-set clipboard=unnamed
+
+" allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" Only do this for Vim version 5.0 and later.
-if version >= 500
+set nobackup
+set history=50		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set incsearch		" do incremental searching
+set linebreak
+set shiftwidth=4
+set ts=4
+set expandtab
+set clipboard=unnamed
+set nowrap
+set autochdir
+set foldmethod=indent
 
-  " I like highlighting strings inside C comments
-  let c_comment_strings=1
+" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
+" let &guioptions = substitute(&guioptions, "t", "", "g")
 
-  " Switch on syntax highlighting if it wasn't on yet.
-  if !exists("syntax_on")
-    syntax on
-  endif
+" Don't use Ex mode, use Q for formatting
+map Q gq
 
-  " Switch on search pattern highlighting.
+" This is an alternative that also works in block mode, but the deleted
+" text is lost and it only works for putting the current register.
+"vnoremap p "_dp
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
   set hlsearch
-
-  " For Win32 version, have "K" lookup the keyword in a help file
-  "if has("win32")
-  "  let winhelpfile='windows.hlp'
-  "  map K :execute "!start winhlp32 -k <cword> " . winhelpfile <CR>
-  "endif
-
-  " Set nice colors
-  " background for normal text is light grey
-  " Text below the last line is darker grey
-  " Cursor is green, Cyan when ":lmap" mappings are active
-  " Constants are not underlined but have a slightly lighter background
-  " highlight Normal guibg=grey90
-  " highlight Cursor guibg=Green guifg=NONE
-  " highlight lCursor guibg=Cyan guifg=NONE
-  " highlight NonText guibg=grey80
-  " highlight Constant gui=NONE guibg=grey95
-  " highlight Special gui=NONE guibg=grey95
-
 endif
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  augroup END
+
+else
+
+  set autoindent		" always set autoindenting on
+
+endif " has("autocmd")
+
+colorscheme darkblue
+au BufRead,BufNewFile *.csproj,*.fsproj,*.msbuild set filetype=xml
+au BufRead,BufNewFile *.fs,*.fsi set filetype=fs
+au BufRead,BufNewFile *.json set filetype=javascript
+au BufRead,BufNewFile *.svb set filetype=vb
+
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_working_path_mode=2
+let g:ctrlp_mru_files=1
+set wildignore+=.git\*,Debug\*,Intermediate\*,Release\*
 
