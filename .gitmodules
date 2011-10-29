@@ -1,8 +1,8 @@
 [submodule "bundle/delmitmate"]
 	path = bundle/delmitmate
 	url = git://github.com/Raimondi/delimitMate.git
-[submodule "bundle/ctrlp.vim"]
-	path = bundle/ctrlp.vim
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
 	url = http://github.com/kien/ctrlp.vim
 [submodule "bundle/camelcasemotion"]
 	path = bundle/camelcasemotion
