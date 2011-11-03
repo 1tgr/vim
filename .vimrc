@@ -94,7 +94,8 @@ au BufRead,BufNewFile *.svb set filetype=vb
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_working_path_mode=2
 let g:ctrlp_mru_files=1
-set wildignore+=.git\*,Debug\*,Intermediate\*,Release\*
-
 let g:fsharp_interactive_bin='C:\Program Files\Microsoft F#\v4.0\fsi.exe'
+
+set wildignore+=.git\*,Debug\*,Intermediate\*,Release\*
+set foldopen+=jump
 
