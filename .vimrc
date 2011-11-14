@@ -98,4 +98,4 @@ let g:fsharp_interactive_bin='C:\Program Files\Microsoft F#\v4.0\fsi.exe'
 
 set wildignore+=.git\*,Debug\*,Intermediate\*,Release\*
 set foldopen+=jump
-
+set formatoptions+=ro
