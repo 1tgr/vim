@@ -87,7 +87,7 @@ else
 endif " has("autocmd")
 
 colorscheme darkblue
-au BufRead,BufNewFile *.csproj,*.fsproj,*.msbuild set filetype=xml
+au BufRead,BufNewFile *.csproj,*.fsproj,*.msbuild,*.nuspec set filetype=xml
 au BufRead,BufNewFile *.json set filetype=javascript
 au BufRead,BufNewFile *.svb set filetype=vb
 
