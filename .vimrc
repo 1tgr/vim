@@ -90,6 +90,7 @@ colorscheme darkblue
 au BufRead,BufNewFile *.csproj,*.fsproj,*.msbuild,*.nuspec set filetype=xml
 au BufRead,BufNewFile *.json set filetype=javascript
 au BufRead,BufNewFile *.svb set filetype=vb
+au BufRead,BufNewFile *.il set filetype=ilasm
 
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_working_path_mode=2
