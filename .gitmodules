@@ -19,3 +19,6 @@
 [submodule "bundle/MSIL-Assembly"]
 	path = bundle/MSIL-Assembly
 	url = https://github.com/vim-scripts/MSIL-Assembly.git
+[submodule "bundle/vim-easymotion"]
+	path = bundle/vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git
