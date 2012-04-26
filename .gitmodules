@@ -4,9 +4,6 @@
 [submodule "bundle/camelcasemotion"]
 	path = bundle/camelcasemotion
 	url = http://github.com/vim-scripts/camelcasemotion.git
-[submodule "bundle/fsharp-vim"]
-	path = bundle/fsharp-vim
-	url = https://github.com/kongo2002/fsharp-vim.git
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
