@@ -13,9 +13,6 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "bundle/MSIL-Assembly"]
 	path = bundle/MSIL-Assembly
 	url = https://github.com/vim-scripts/MSIL-Assembly.git
