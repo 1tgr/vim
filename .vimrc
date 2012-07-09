@@ -114,3 +114,6 @@ autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
 set shell=bash
+set autoread
+set visualbell
+set relativenumber
