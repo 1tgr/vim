@@ -87,7 +87,7 @@ else
 endif " has("autocmd")
 
 colorscheme darkblue
-au BufRead,BufNewFile *.csproj,*.fsproj,*.msbuild,*.nuspec set filetype=xml
+au BufRead,BufNewFile *.csproj,*.fsproj,*.proj,*.targets,*.msbuild,*.nuspec set filetype=xml
 au BufRead,BufNewFile *.json set filetype=javascript
 au BufRead,BufNewFile *.svb set filetype=vb
 au BufRead,BufNewFile *.il set filetype=ilasm
@@ -101,6 +101,9 @@ let g:fsharp_interactive_bin='C:\Program Files\Microsoft F#\v4.0\fsi.exe'
 set wildignore+=.git\*,Debug\*,Intermediate\*,Release\*
 set foldopen+=jump
 set formatoptions+=ro
+set autoread
+set visualbell
+set relativenumber
 "
 " Automatically open, but do not go to (if there are errors) the quickfix /
 " location list window, or close it when is has become empty.
@@ -113,7 +116,9 @@ set formatoptions+=ro
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
-set shell=bash
-set autoread
-set visualbell
-set relativenumber
+if has("win32")
+    set shell=cmd
+    set shellcmdflag=/c
+else
+    set shell=bash
+endif
