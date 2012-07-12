@@ -104,6 +104,8 @@ set formatoptions+=ro
 set autoread
 set visualbell
 set relativenumber
+set showbreak=>\ 
+
 "
 " Automatically open, but do not go to (if there are errors) the quickfix /
 " location list window, or close it when is has become empty.
