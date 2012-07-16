@@ -16,3 +16,6 @@
 [submodule "bundle/vim-easymotion"]
 	path = bundle/vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/renamer.vim"]
+	path = bundle/renamer.vim
+	url = https://github.com/vim-scripts/renamer.vim.git
