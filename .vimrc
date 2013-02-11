@@ -30,6 +30,8 @@ set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set linebreak
 set shiftwidth=4
+set textwidth=100
+set colorcolumn=+0
 set ts=4
 set expandtab
 set clipboard=unnamed
@@ -38,7 +40,7 @@ set autochdir
 set foldmethod=indent
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
+let &guioptions = substitute(&guioptions, "t", "", "g")
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -66,9 +68,6 @@ if has("autocmd")
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
