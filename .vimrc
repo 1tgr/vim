@@ -38,6 +38,7 @@ set clipboard=unnamed
 set nowrap
 set autochdir
 set foldmethod=indent
+set noswapfile
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -100,7 +101,6 @@ set wildignore+=.git\*,Debug\*,Intermediate\*,Release\*
 set foldopen+=jump
 set formatoptions+=ro
 set autoread
-set visualbell
 set relativenumber
 set showbreak=>\ 
 
