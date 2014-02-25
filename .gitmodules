@@ -21,4 +21,7 @@
 	url = https://github.com/vim-scripts/renamer.vim.git
 [submodule "bundle/fsharp-vim"]
 	path = bundle/fsharp-vim
-	url = git@github.com:timrobinson/fsharp-vim.git
+	url = https://github.com/timrobinson/fsharp-vim.git
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
